@@ -1,66 +1,99 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+## CarControl
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+### Daftar Username dan Password
+> Note: login dapat menggunakan Username ataupun Email
+- Admin :
+  - Username: admin
+  - Email: admin@test.com
+  - Password: 12345678
+- Pihak yang Menyetujui: 
+  - Username : Approver1
+  - Email : Approver1@test.com
+  - Password : 12345678
+ 
+- Pihak ke 2 yang Menyetujui: 
+  - Username: Approver2
+  - Email : Approver2@test.com
+  - Password: 12345678
 
-## About Laravel
+### Informasi Aplikasi
+- Versi Database: MySQL 8.0
+- Versi PHP: ^8.1
+- Framework: Laravel
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+### Cara Instalasi Aplikasi
+1. Clone repository ini ke komputer Anda.
+2. Buka terminal dan masuk ke direktori aplikasi.
+3. Jalankan perintah `composer install` untuk menginstall dependency.
+4. Buat file `.env` dengan menyalin isi file `.env.example`.
+5. Buat database baru di MySQL.
+6. Isi konfigurasi database di file `.env` dengan konfigurasi database Anda.
+7. Jalankan perintah `php artisan key:generate` untuk membuat key aplikasi.
+8. Jalankan perintah `php artisan migrate` untuk membuat tabel-tabel di database.
+9. Jalankan perintah `php artisan db:seed` untuk mengisi data awal ke database.
+10. Jalankan perintah `php artisan serve` untuk menjalankan aplikasi.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+### Panduan Penggunaan Aplikasi
+1. Masuk ke Halaman Login
+   - Buka aplikasi pemesanan kendaraan melalui URL: `http://<alamat_aplikasi>/login`
+   - Masukkan username dan password sesuai dengan peran pengguna:
+     - Admin: Masukkan username "`Admin`" dan password "`12345678`"
+     - Pihak yang Menyetujui: Masukkan username "`Approver1`" dan password "`12345678`"
+     - Pihak ke 2 yang Menyetujui: Masukkan username "`Approver2`" dan password "`12345678`"
+   - Klik tombol "Login" untuk masuk ke aplikasi.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+2. Dashboard
+   - Setelah login berhasil, admin akan diarahkan ke halaman dashboard admin, dan pihak yang menyetujui akan diarahkan ke halaman dashboard pihak yang menyetujui.
+   - Pada halaman dashboard, Anda dapat melihat jumlah User, Kendaraan, Lokasi, pemesanan kendaraan, dan Log Aktivitas.
+3. Data User dan Driver (Admin)
+    - Pada halaman user dan driver, Anda dapat menambahkan, menganti, menghapus user ataupun driver dengan langkah berikut:
+        - Menambahkan user/driver dan Mengedit User
+            - Klik tombol User pada menu lalu pilih ingin menginput user atau driver
+            - Klik tombol Tambah User
+            - Isi informasi yang dibutuhkan
+            - Setelah mengisi semua informasi, klik tombol "Submit" untuk menyimpan.
+        - Menghapus user/driver
+            - Klik tombol ⁝ pada bagian aksi
+            - Pilih Delete maka user/driver langsung terhapus
+4. Kendaraan (Admin)
+    - Pada halaman kendaraan, Anda dapat menambahkan, menganti, menghapus, dan dapat melihat grafik pemakaian kendaraan dan laporan penggunaan kendaraan dengan langkah berikut:
+        - Menambahkan Kendaraan
+            - Klik tombol Kendaraan pada menu
+            - Klik tombol Tambah User
+            - Isi informasi yang dibutuhkan
+            - Setelah mengisi semua informasi, klik tombol “Submit” untuk menyimpan.
+        - Mengedit Kendaraan
+            - Klik tombol ⁝ pada bagian aksi
+            - Isi informasi yang dibutuhkan
+            - Setelah mengisi semua informasi, klik tombol “Submit” untuk menyimpan.
+        - Melihat informasi dan grafik pemakaian
+            - Klik tombol ⁝ pada bagian aksi.
+            - Klik Show dan anda dapat melihat informasi dan grafik pemakaian kendaraan.
+        - Menghapus Kendaraan
+            - Klik tombol ⁝ pada bagian aksi
+            - Pilih Delete maka Kendaraan langsung terhapus 
+5. Lokasi (Admin)
+    - Pada halaman lokasi, Anda dapat melihat, mengedit ataupun menghapus lokasi dengan langkah berikut:
+        - Klik tombol lokasi pada menu
+            - Klik tombol Tambah lokasi
+            - Isi informasi yang dibutuhkan
+            - Setelah mengisi semua informasi, klik tombol “Submit” untuk menyimpan.
+        - Mengedit/menghapus lokasi
+            - Klik tombol ⁝ pada bagian aksi
+            - pilih edit/delete
+            - Isi informasi yang dibutuhkan
+            - Setelah mengisi semua informasi, klik tombol “Submit” untuk menyimpan.
+6. Pemesanan Kendaraan (Admin)
+   - Pada halaman pemesanan, Anda dapat menginputkan pemesanan kendaraan dan mengexport menjadi file excel dengan langkah berikut:
+     - Klik tombol "`Pesan Baru`" atau navigasi menu yang sesuai.
+     - Isi informasi yang dibutuhkan
+     - Setelah mengisi semua informasi, klik tombol "Submit" untuk menyimpan pemesanan.
 
-## Learning Laravel
+     -- Mengexport Pemesanan
+        - Klik tombol "`Export`" maka list pemesanan di export ke file excel
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
-
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
-
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
-
-## Laravel Sponsors
-
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
-
-### Premium Partners
-
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+7. Persetujuan Pemesanan Kendaraan (Approver)
+   - Pada halaman dashboard pihak yang menyetujui, Anda dapat melihat daftar pemesanan yang perlu disetujui atau ditolak.
+   - Pilih pemesanan yang ingin Anda tinjau.
+   - Tinjau informasi pemesanan dan klik tombol "`Setujui`" atau "`Tolak`" untuk memberikan persetujuan atau penolakan.
+   - Setelah mengambil keputusan, status pemesanan akan diperbarui.
